@@ -1,2 +1,2 @@
 # PayrollDeskApp
-Payroll Desktop Application
+Payroll Desktop Application .NET CORE
