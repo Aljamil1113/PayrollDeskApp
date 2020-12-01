@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace PayrollApp
 {
-    public partial class Form1 : Form
+    public partial class EmployeeForm : Form
     {
-        public Form1()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
 
+        private void btnExitEmployee_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

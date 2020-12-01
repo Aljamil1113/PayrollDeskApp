@@ -1,0 +1,15 @@
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.exe
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.deps.json
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.runtimeconfig.json
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.runtimeconfig.dev.json
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\PayrollApp.pdb
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csprojAssemblyReference.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.EmployeeForm.resources
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.GenerateResource.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.AssemblyInfoInputs.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.AssemblyInfo.cs
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.CoreCompileInputs.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.pdb
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.genruntimeconfig.cache
