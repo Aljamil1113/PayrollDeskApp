@@ -1,2 +1,2 @@
 # PayrollDeskApp
-Payroll Desktop Application .NET CORE
+Payroll Desktop Application .NET CORE WINFORMS
