@@ -31,6 +31,27 @@ namespace PayrollApp
                 MessageBox.Show("New Employee Added!");
             }
         }
+
+        private void btnResetEmployee_Click(object sender, EventArgs e)
+        {
+            txtEmployeeID.Clear();
+            txtFirstname.Clear();
+            txtLastName.Text = "";
+            rdMale.Checked = false;
+            rdFemale.Checked = false;
+            txtNatInsurance.Text = "";
+            dtDateOfBirth.Value = new DateTime(DateTime.Now.Ticks);
+            rdMarried.Checked = false;
+            rdFemale.Checked = false;
+            chkIsMember.Checked = false;
+            txtAddress.Text = "";
+            txtCity.Text = "";
+            txtPostCode.Text = "";
+            cmbCountry.SelectedIndex = 0;
+            txtPhoneNumber.Text = "";
+            txtEmailAddress.Text = "";
+            txtNotes.Text = "";
+        }
         #endregion
 
         #region IMPLICIT VALIDATIONS

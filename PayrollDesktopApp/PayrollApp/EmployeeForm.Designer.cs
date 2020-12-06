@@ -642,6 +642,7 @@
             this.btnResetEmployee.TabIndex = 5;
             this.btnResetEmployee.Text = "Reset";
             this.btnResetEmployee.UseVisualStyleBackColor = false;
+            this.btnResetEmployee.Click += new System.EventHandler(this.btnResetEmployee_Click);
             // 
             // btnPreviewEmployee
             // 
