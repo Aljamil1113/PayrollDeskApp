@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,6 +31,7 @@ namespace PayrollApp
             }
         }
         #endregion
+
         #region IMPLICIT VALIDATIONS
         //IMPLICIT VALIDATION TO INPUT NUMBERS ONLY
         bool IsNumberOrBackSpace;
@@ -66,10 +68,22 @@ namespace PayrollApp
         #region EXPLICIT VALIDATIONS
         private bool isControlValid()
         {
+            Regex objEmployeeID = new Regex("^[0-9]{3,4}$");
+            Regex objFirstName = new Regex("^[A-Z][a-zA-Z]*$");
+            Regex objLastName = new Regex("^[A-Z][a-zA-Z]*$");
+            Regex objIN = new Regex(@"[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-D\s]$");
+            Regex objEmail = new Regex(@"[a-zA-Z0-9]{1,30}@[a-zA-Z0-9]{1,30}.[a-zA-Z]{2,3}");
             //EMPLOYEEID
             if (Convert.ToInt32(txtEmployeeID.Text.Length) < 1)
             {
                 MessageBox.Show("Please, Enter Employee ID", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
+            else if(!objEmployeeID.IsMatch(txtEmployeeID.Text))
+            {
+                MessageBox.Show("Please, Enter valid Employee ID", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmployeeID.Focus();
                 txtEmployeeID.BackColor = Color.Silver;
                 return false;
@@ -87,7 +101,13 @@ namespace PayrollApp
                 txtFirstname.BackColor = Color.Silver;
                 return false;
             }
-
+            else if(!objFirstName.IsMatch(txtFirstname.Text))
+            {
+                MessageBox.Show("Please, Enter valid First Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
             else
             {
                 txtFirstname.BackColor = Color.White;
@@ -101,7 +121,13 @@ namespace PayrollApp
                 txtLastName.BackColor = Color.Silver;
                 return false;
             }
-
+            else if(!objLastName.IsMatch(txtLastName.Text))
+            {
+                MessageBox.Show("Please, Enter valid Last Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
             else
             {
                 txtLastName.BackColor = Color.White;
@@ -130,7 +156,13 @@ namespace PayrollApp
                 txtNatInsurance.BackColor = Color.Silver;
                 return false;
             }
-
+            else if(!objIN.IsMatch(txtNatInsurance.Text))
+            {
+                MessageBox.Show("Please, Enter valid Insurance No.", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
             else
             {
                 txtNatInsurance.BackColor = Color.White;
@@ -230,7 +262,13 @@ namespace PayrollApp
                 txtEmailAddress.BackColor = Color.Silver;
                 return false;
             }
-
+            else if(!objEmail.IsMatch(txtEmailAddress.Text))
+            {
+                MessageBox.Show("Please, Enter valid Email Address", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
             else
             {
                 txtEmailAddress.BackColor = Color.White;
