@@ -103,7 +103,7 @@
             this.chkIsMember.Location = new System.Drawing.Point(304, 393);
             this.chkIsMember.Name = "chkIsMember";
             this.chkIsMember.Size = new System.Drawing.Size(101, 24);
-            this.chkIsMember.TabIndex = 15;
+            this.chkIsMember.TabIndex = 11;
             this.chkIsMember.Text = "Is Member";
             this.chkIsMember.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +123,7 @@
             this.grpMaritalStatus.Location = new System.Drawing.Point(55, 325);
             this.grpMaritalStatus.Name = "grpMaritalStatus";
             this.grpMaritalStatus.Size = new System.Drawing.Size(374, 53);
-            this.grpMaritalStatus.TabIndex = 13;
+            this.grpMaritalStatus.TabIndex = 8;
             this.grpMaritalStatus.TabStop = false;
             this.grpMaritalStatus.Text = "Marital Status";
             // 
@@ -133,7 +133,7 @@
             this.rdMarried.Location = new System.Drawing.Point(198, 23);
             this.rdMarried.Name = "rdMarried";
             this.rdMarried.Size = new System.Drawing.Size(82, 24);
-            this.rdMarried.TabIndex = 1;
+            this.rdMarried.TabIndex = 10;
             this.rdMarried.TabStop = true;
             this.rdMarried.Text = "Married";
             this.rdMarried.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@
             this.rdSingle.Location = new System.Drawing.Point(48, 23);
             this.rdSingle.Name = "rdSingle";
             this.rdSingle.Size = new System.Drawing.Size(71, 24);
-            this.rdSingle.TabIndex = 0;
+            this.rdSingle.TabIndex = 9;
             this.rdSingle.TabStop = true;
             this.rdSingle.Text = "Single";
             this.rdSingle.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             this.dtDateOfBirth.Location = new System.Drawing.Point(304, 280);
             this.dtDateOfBirth.Name = "dtDateOfBirth";
             this.dtDateOfBirth.Size = new System.Drawing.Size(147, 27);
-            this.dtDateOfBirth.TabIndex = 12;
+            this.dtDateOfBirth.TabIndex = 7;
             // 
             // lblDateOfBirth
             // 
@@ -172,7 +172,7 @@
             this.txtNatInsurance.Location = new System.Drawing.Point(304, 245);
             this.txtNatInsurance.Name = "txtNatInsurance";
             this.txtNatInsurance.Size = new System.Drawing.Size(125, 27);
-            this.txtNatInsurance.TabIndex = 10;
+            this.txtNatInsurance.TabIndex = 6;
             // 
             // lblNatInsurance
             // 
@@ -190,7 +190,7 @@
             this.grpGender.Location = new System.Drawing.Point(55, 160);
             this.grpGender.Name = "grpGender";
             this.grpGender.Size = new System.Drawing.Size(374, 79);
-            this.grpGender.TabIndex = 8;
+            this.grpGender.TabIndex = 3;
             this.grpGender.TabStop = false;
             this.grpGender.Text = "Gender";
             // 
@@ -200,7 +200,7 @@
             this.rdMale.Location = new System.Drawing.Point(48, 40);
             this.rdMale.Name = "rdMale";
             this.rdMale.Size = new System.Drawing.Size(63, 24);
-            this.rdMale.TabIndex = 0;
+            this.rdMale.TabIndex = 4;
             this.rdMale.TabStop = true;
             this.rdMale.Text = "Male";
             this.rdMale.UseVisualStyleBackColor = true;
@@ -211,7 +211,7 @@
             this.rdFemale.Location = new System.Drawing.Point(198, 40);
             this.rdFemale.Name = "rdFemale";
             this.rdFemale.Size = new System.Drawing.Size(78, 24);
-            this.rdFemale.TabIndex = 1;
+            this.rdFemale.TabIndex = 5;
             this.rdFemale.TabStop = true;
             this.rdFemale.Text = "Female";
             this.rdFemale.UseVisualStyleBackColor = true;
@@ -248,21 +248,22 @@
             this.txtLastName.Location = new System.Drawing.Point(304, 127);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(147, 27);
-            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TabIndex = 2;
             // 
             // txtFirstname
             // 
             this.txtFirstname.Location = new System.Drawing.Point(304, 94);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(147, 27);
-            this.txtFirstname.TabIndex = 3;
+            this.txtFirstname.TabIndex = 1;
             // 
             // txtEmployeeID
             // 
             this.txtEmployeeID.Location = new System.Drawing.Point(304, 61);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(147, 27);
-            this.txtEmployeeID.TabIndex = 2;
+            this.txtEmployeeID.TabIndex = 0;
+            this.txtEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmployeeID_KeyPress);
             // 
             // grpEmployeeContact
             // 
@@ -492,7 +493,7 @@
             this.cmbCountry.Location = new System.Drawing.Point(299, 184);
             this.cmbCountry.Name = "cmbCountry";
             this.cmbCountry.Size = new System.Drawing.Size(196, 28);
-            this.cmbCountry.TabIndex = 10;
+            this.cmbCountry.TabIndex = 15;
             // 
             // lblCountry
             // 
@@ -508,7 +509,8 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(299, 245);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(196, 27);
-            this.txtPhoneNumber.TabIndex = 2;
+            this.txtPhoneNumber.TabIndex = 16;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblNotes
             // 
@@ -525,7 +527,7 @@
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(196, 49);
-            this.txtNotes.TabIndex = 4;
+            this.txtNotes.TabIndex = 18;
             // 
             // lblPhoneNumber
             // 
@@ -550,14 +552,14 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(299, 278);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(196, 27);
-            this.txtEmailAddress.TabIndex = 3;
+            this.txtEmailAddress.TabIndex = 17;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(299, 61);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(196, 27);
-            this.txtAddress.TabIndex = 2;
+            this.txtAddress.TabIndex = 12;
             // 
             // lblPostCode
             // 
@@ -573,7 +575,7 @@
             this.txtPostCode.Location = new System.Drawing.Point(299, 127);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(196, 27);
-            this.txtPostCode.TabIndex = 4;
+            this.txtPostCode.TabIndex = 14;
             // 
             // lblAddress
             // 
@@ -598,7 +600,7 @@
             this.txtCity.Location = new System.Drawing.Point(299, 94);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(196, 27);
-            this.txtCity.TabIndex = 3;
+            this.txtCity.TabIndex = 13;
             // 
             // btnAddEmployee
             // 

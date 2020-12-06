@@ -21,5 +21,36 @@ namespace PayrollApp
         {
             this.Close();
         }
+
+
+        //IMPLICIT VALIDATION TO INPUT NUMBERS ONLY
+        bool IsNumberOrBackSpace;
+        private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsNumberOrBackSpace = false;
+
+            if(char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                IsNumberOrBackSpace = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsNumberOrBackSpace = false;
+
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                IsNumberOrBackSpace = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
