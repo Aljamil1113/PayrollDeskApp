@@ -17,12 +17,20 @@ namespace PayrollApp
             InitializeComponent();
         }
 
+        #region ACTION BUTTONS
         private void btnExitEmployee_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            if(isControlValid())
+            {
+                MessageBox.Show("New Employee Added!");
+            }
+        }
+        #endregion
+        #region IMPLICIT VALIDATIONS
         //IMPLICIT VALIDATION TO INPUT NUMBERS ONLY
         bool IsNumberOrBackSpace;
         private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
@@ -52,5 +60,200 @@ namespace PayrollApp
                 e.Handled = true;
             }
         }
+
+        #endregion
+
+        #region EXPLICIT VALIDATIONS
+        private bool isControlValid()
+        {
+            //EMPLOYEEID
+            if (Convert.ToInt32(txtEmployeeID.Text.Length) < 1)
+            {
+                MessageBox.Show("Please, Enter Employee ID", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmployeeID.Focus();
+                txtEmployeeID.BackColor = Color.Silver;
+                return false;
+            }
+            else
+            {
+                txtEmployeeID.BackColor = Color.White;
+            }
+
+            //FIRSTNAME
+            if (string.IsNullOrEmpty(txtFirstname.Text))
+            {
+                MessageBox.Show("Please enter First Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtFirstname.Focus();
+                txtFirstname.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtFirstname.BackColor = Color.White;
+            }
+
+            //LAST NAME
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                MessageBox.Show("Please Enter Last Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLastName.Focus();
+                txtLastName.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtLastName.BackColor = Color.White;
+            }
+
+            // GENDER
+            if (rdFemale.Checked == false && rdMale.Checked == false)
+            {
+                MessageBox.Show("Please Enter checked either Male or Female", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                grpGender.Focus();
+                rdMale.BackColor = Color.Silver;
+                rdFemale.BackColor = Color.Silver;
+                return false;
+            }
+            else
+            {
+                rdMale.BackColor = Color.CornflowerBlue;
+                rdFemale.BackColor = Color.CornflowerBlue;
+            }
+
+            //National Insurance
+            if (string.IsNullOrEmpty(txtNatInsurance.Text))
+            {
+                MessageBox.Show("Please Enter national Insurance No.", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNatInsurance.Focus();
+                txtNatInsurance.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtNatInsurance.BackColor = Color.White;
+            }
+
+            //Marital Status
+            if (rdMarried.Checked == false && rdSingle.Checked == false)
+            {
+                MessageBox.Show("Please Enter checked either Single or Married", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                grpMaritalStatus.Focus();
+                rdSingle.BackColor = Color.Silver;
+                rdMarried.BackColor = Color.Silver;
+                return false;
+            }
+            else
+            {
+                rdSingle.BackColor = Color.CornflowerBlue;
+                rdMarried.BackColor = Color.CornflowerBlue;
+            }
+
+            //Address
+            if (string.IsNullOrEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("Please Enter Address", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAddress.Focus();
+                txtAddress.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtAddress.BackColor = Color.White;
+            }
+
+            //CITY
+            if (string.IsNullOrEmpty(txtCity.Text))
+            {
+                MessageBox.Show("Please Enter City", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCity.Focus();
+                txtCity.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtCity.BackColor = Color.White;
+            }
+
+            //POST CODE
+            if (string.IsNullOrEmpty(txtPostCode.Text))
+            {
+                MessageBox.Show("Please Enter Post Code", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPostCode.Focus();
+                txtPostCode.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtPostCode.BackColor = Color.White;
+            }
+
+
+            //COUNTRY
+            if (cmbCountry.SelectedIndex == 0 || cmbCountry.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a country?", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbCountry.Focus();
+                cmbCountry.BackColor = Color.Silver;
+                return false;
+            }
+            else
+            {
+                cmbCountry.BackColor = Color.White;
+            }
+
+
+            //PHONENUMBER
+            if (Convert.ToInt32(txtPhoneNumber.Text.Length) < 1)
+            {
+                MessageBox.Show("Please, Enter Phone Number", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPhoneNumber.Focus();
+                txtPhoneNumber.BackColor = Color.Silver;
+                return false;
+            }
+            else
+            {
+                txtPhoneNumber.BackColor = Color.White;
+            }
+
+
+            //EMAIL ADDRESS
+            if (string.IsNullOrEmpty(txtEmailAddress.Text))
+            {
+                MessageBox.Show("Please Enter Email Address", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmailAddress.Focus();
+                txtEmailAddress.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtEmailAddress.BackColor = Color.White;
+            }
+
+            //NOTES
+            if (txtNotes.Text.Length > 30)
+            {
+                MessageBox.Show("Too much text! Please enter fewer text", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNotes.Focus();
+                txtNotes.BackColor = Color.Silver;
+                return false;
+            }
+
+            else
+            {
+                txtNotes.BackColor = Color.White;
+            }
+
+            return true;
+
+
+        }
+        #endregion
     }
 }

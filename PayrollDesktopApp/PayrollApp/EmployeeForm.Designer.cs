@@ -611,6 +611,7 @@
             this.btnAddEmployee.TabIndex = 2;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnUpdateEmployee
             // 
