@@ -52,6 +52,54 @@ namespace PayrollApp
             txtEmailAddress.Text = "";
             txtNotes.Text = "";
         }
+        #region PREVIEW
+        string Gender, MaritalStatus;
+        bool isMember;
+
+        private void CheckedItems()
+        {
+            //Check Gender
+            if (rdMale.Checked)
+            {
+                Gender = "Male";
+            }
+            else
+            {
+                Gender = "Female";
+            }
+
+            //Check Marital Status
+            if (rdMarried.Checked)
+            {
+                MaritalStatus = "Married";
+            }
+            else
+            {
+                MaritalStatus = "Single";
+            }
+
+            //Check UnionMember
+            if (chkIsMember.Checked)
+            {
+                isMember = true;
+            }
+            else
+            {
+                isMember = false;
+            }
+        }
+        #endregion
+
+        private void btnPreviewEmployee_Click(object sender, EventArgs e)
+        {
+            PreviewEmployeeForm previewObj = new PreviewEmployeeForm();
+            CheckedItems();
+            previewObj.PreviewEmployeeData(Convert.ToInt32(txtEmployeeID.Text), txtFirstname.Text, txtLastName.Text, Gender,
+                txtNatInsurance.Text, dtDateOfBirth.Text, MaritalStatus, isMember, txtAddress.Text, txtCity.Text, txtPostCode.Text,
+                cmbCountry.SelectedItem.ToString(), txtPhoneNumber.Text, txtEmailAddress.Text, txtNotes.Text);
+
+            previewObj.ShowDialog();
+        }
         #endregion
 
         #region IMPLICIT VALIDATIONS
@@ -329,5 +377,8 @@ namespace PayrollApp
 
         }
         #endregion
+
+
+       
     }
 }

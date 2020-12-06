@@ -653,6 +653,7 @@
             this.btnPreviewEmployee.TabIndex = 6;
             this.btnPreviewEmployee.Text = "Preview";
             this.btnPreviewEmployee.UseVisualStyleBackColor = false;
+            this.btnPreviewEmployee.Click += new System.EventHandler(this.btnPreviewEmployee_Click);
             // 
             // btnExitEmployee
             // 
