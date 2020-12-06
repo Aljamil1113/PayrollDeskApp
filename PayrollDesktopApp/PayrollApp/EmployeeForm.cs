@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -262,12 +263,26 @@ namespace PayrollApp
                 txtEmailAddress.BackColor = Color.Silver;
                 return false;
             }
-            else if(!objEmail.IsMatch(txtEmailAddress.Text))
+            //else if(!objEmail.IsMatch(txtEmailAddress.Text))
+            //{
+            //    MessageBox.Show("Please, Enter valid Email Address", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    txtEmployeeID.Focus();
+            //    txtEmployeeID.BackColor = Color.Silver;
+            //    return false;
+            //}
+            else if(txtEmailAddress.Text.Length >= 1)
             {
-                MessageBox.Show("Please, Enter valid Email Address", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmployeeID.Focus();
-                txtEmployeeID.BackColor = Color.Silver;
-                return false;
+                try
+                {
+                    MailAddress objMail= new MailAddress(txtEmailAddress.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmployeeID.Focus();
+                    txtEmployeeID.BackColor = Color.Silver;
+                    return false;
+                }
             }
             else
             {
