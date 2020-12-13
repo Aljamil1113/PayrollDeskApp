@@ -8,8 +8,8 @@ D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcorea
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.GenerateResource.cache
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.AssemblyInfoInputs.cache
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.AssemblyInfo.cs
-D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.CoreCompileInputs.cache
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.dll
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.pdb
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.genruntimeconfig.cache
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.PreviewEmployeeForm.resources
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csprojAssemblyReference.cache

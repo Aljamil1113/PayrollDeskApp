@@ -68,10 +68,12 @@
             this.btnResetEmployee = new System.Windows.Forms.Button();
             this.btnPreviewEmployee = new System.Windows.Forms.Button();
             this.btnExitEmployee = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpEmployee.SuspendLayout();
             this.grpMaritalStatus.SuspendLayout();
             this.grpGender.SuspendLayout();
             this.grpEmployeeContact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEmployee
@@ -666,12 +668,31 @@
             this.btnExitEmployee.UseVisualStyleBackColor = false;
             this.btnExitEmployee.Click += new System.EventHandler(this.btnExitEmployee_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 541);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1170, 156);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Text = "dataGridView1";
+           
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1170, 547);
+            this.ClientSize = new System.Drawing.Size(1170, 697);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExitEmployee);
             this.Controls.Add(this.btnPreviewEmployee);
             this.Controls.Add(this.btnResetEmployee);
@@ -691,6 +712,7 @@
             this.grpGender.PerformLayout();
             this.grpEmployeeContact.ResumeLayout(false);
             this.grpEmployeeContact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -737,6 +759,7 @@
         private System.Windows.Forms.Button btnPreviewEmployee;
         private System.Windows.Forms.Button btnExitEmployee;
         private System.Windows.Forms.ComboBox cmbCountry;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

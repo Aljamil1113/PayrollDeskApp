@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
@@ -378,7 +379,16 @@ namespace PayrollApp
         }
         #endregion
 
+        #region DATA
+        public void LoadData()
+        {
+            string connectionString = @"Data Source=bikashpc\sqlexpress;Initial Catalog=bksdb;     
+                                                            Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+        }
+        #endregion
 
-       
+
+
     }
 }
