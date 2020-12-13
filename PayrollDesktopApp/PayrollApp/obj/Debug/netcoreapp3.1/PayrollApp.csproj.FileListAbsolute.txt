@@ -13,3 +13,11 @@ D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcorea
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.genruntimeconfig.cache
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.PreviewEmployeeForm.resources
 D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csprojAssemblyReference.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.CoreCompileInputs.cache
+D:\Udemy\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.CopyComplete

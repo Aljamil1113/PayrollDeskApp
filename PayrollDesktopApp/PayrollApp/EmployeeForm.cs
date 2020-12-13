@@ -18,6 +18,8 @@ namespace PayrollApp
         public EmployeeForm()
         {
             InitializeComponent();
+
+            LoadData();
         }
 
         #region ACTION BUTTONS
@@ -382,9 +384,15 @@ namespace PayrollApp
         #region DATA
         public void LoadData()
         {
-            string connectionString = @"Data Source=bikashpc\sqlexpress;Initial Catalog=bksdb;     
-                                                            Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-O5ATO80;Initial Catalog=PayrollSystemDB;Integrated Security=True";
             SqlConnection sqlCon = new SqlConnection(connectionString);
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from tblEmployee", connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+
+            employeesGrid.DataSource = dataSet.Tables[0].DefaultView;
+
         }
         #endregion
 

@@ -68,12 +68,12 @@
             this.btnResetEmployee = new System.Windows.Forms.Button();
             this.btnPreviewEmployee = new System.Windows.Forms.Button();
             this.btnExitEmployee = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeesGrid = new System.Windows.Forms.DataGridView();
             this.grpEmployee.SuspendLayout();
             this.grpMaritalStatus.SuspendLayout();
             this.grpGender.SuspendLayout();
             this.grpEmployeeContact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEmployee
@@ -668,23 +668,22 @@
             this.btnExitEmployee.UseVisualStyleBackColor = false;
             this.btnExitEmployee.Click += new System.EventHandler(this.btnExitEmployee_Click);
             // 
-            // dataGridView1
+            // employeesGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 541);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1170, 156);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.Text = "dataGridView1";
-           
+            this.employeesGrid.AllowUserToAddRows = false;
+            this.employeesGrid.AllowUserToDeleteRows = false;
+            this.employeesGrid.AllowUserToResizeColumns = false;
+            this.employeesGrid.AllowUserToResizeRows = false;
+            this.employeesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeesGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.employeesGrid.Location = new System.Drawing.Point(0, 541);
+            this.employeesGrid.MultiSelect = false;
+            this.employeesGrid.Name = "employeesGrid";
+            this.employeesGrid.ReadOnly = true;
+            this.employeesGrid.RowHeadersWidth = 51;
+            this.employeesGrid.Size = new System.Drawing.Size(1170, 156);
+            this.employeesGrid.TabIndex = 8;
+            this.employeesGrid.Text = "dataGridView1";
             // 
             // EmployeeForm
             // 
@@ -692,7 +691,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1170, 697);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.employeesGrid);
             this.Controls.Add(this.btnExitEmployee);
             this.Controls.Add(this.btnPreviewEmployee);
             this.Controls.Add(this.btnResetEmployee);
@@ -712,7 +711,7 @@
             this.grpGender.PerformLayout();
             this.grpEmployeeContact.ResumeLayout(false);
             this.grpEmployeeContact.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -759,7 +758,7 @@
         private System.Windows.Forms.Button btnPreviewEmployee;
         private System.Windows.Forms.Button btnExitEmployee;
         private System.Windows.Forms.ComboBox cmbCountry;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView employeesGrid;
     }
 }
 
