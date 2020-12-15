@@ -624,6 +624,7 @@
             this.btnUpdateEmployee.TabIndex = 3;
             this.btnUpdateEmployee.Text = "Update Employee";
             this.btnUpdateEmployee.UseVisualStyleBackColor = false;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
@@ -634,6 +635,7 @@
             this.btnDeleteEmployee.TabIndex = 4;
             this.btnDeleteEmployee.Text = "Delete Employee";
             this.btnDeleteEmployee.UseVisualStyleBackColor = false;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnResetEmployee
             // 
@@ -684,6 +686,7 @@
             this.employeesGrid.Size = new System.Drawing.Size(1170, 156);
             this.employeesGrid.TabIndex = 8;
             this.employeesGrid.Text = "dataGridView1";
+            this.employeesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesGrid_CellClick);
             // 
             // EmployeeForm
             // 
