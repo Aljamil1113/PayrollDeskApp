@@ -17,7 +17,7 @@ namespace PayrollApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeForm());
+            Application.Run(new PayrollCalculator());
         }
     }
 }

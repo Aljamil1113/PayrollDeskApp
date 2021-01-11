@@ -53,7 +53,7 @@ namespace PayrollApp
             if(isControlValid())
             {
                 CheckedItems();
-                string connectionString = @"Data Source=DESKTOP-O5ATO80;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+                string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
 
                 try
@@ -91,7 +91,7 @@ namespace PayrollApp
             if (isControlValid())
             {
                 CheckedItems();
-                string connectionString = @"Data Source=DESKTOP-O5ATO80;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+                string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
 
                 try
@@ -101,7 +101,7 @@ namespace PayrollApp
                     string updateCommand = "UPDATE tblEmployee SET FirstName = '"+ this.txtFirstname.Text + "', LastName = '" 
                         + this.txtLastName.Text + "', Gender = '" + this.Gender + "', NINumber = '" + this.txtNatInsurance.Text + "',DateOfBirth ='" + 
                         this.dtDateOfBirth.Value.ToString("MM/dd/yyyy") + "', MaritalStatus='" + this.MaritalStatus + "', IsMember='" + this.isMember + 
-                        "', Address='" + this.txtAddress.Text + "', City = '" + this.txtCity.Text + "', PostalCode= '" + this.txtPostCode.Text + 
+                        "', Address='" + this.txtAddress.Text + "', City = '" + this.txtCity.Text + "', PostCode= '" + this.txtPostCode.Text + 
                         "', Country = '" + this.cmbCountry.SelectedItem.ToString() + "', PhoneNumber = '" + this.txtPhoneNumber.Text + "', Email= '" +
                         this.txtEmailAddress.Text + "', Notes='" + this.txtNotes.Text + "' WHERE EmployeeID = " + txtEmployeeID.Text + "";
 
@@ -139,7 +139,7 @@ namespace PayrollApp
             if (objDialogResult == DialogResult.Yes)
             {
                 CheckedItems();
-                string connectionString = @"Data Source=DESKTOP-O5ATO80;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+                string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
                 SqlConnection sqlCon = new SqlConnection(connectionString);
 
                 try
@@ -264,6 +264,7 @@ namespace PayrollApp
         private void btnPreviewEmployee_Click(object sender, EventArgs e)
         {
             PreviewEmployeeForm previewObj = new PreviewEmployeeForm();
+            
             CheckedItems();
             previewObj.PreviewEmployeeData(Convert.ToInt32(txtEmployeeID.Text), txtFirstname.Text, txtLastName.Text, Gender,
                 txtNatInsurance.Text, dtDateOfBirth.Text, MaritalStatus, isMember, txtAddress.Text, txtCity.Text, txtPostCode.Text,
@@ -552,9 +553,8 @@ namespace PayrollApp
         #region DATA
         public void LoadData()
         {
-            string connectionString = @"Data Source=DESKTOP-O5ATO80;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
             SqlConnection sqlCon = new SqlConnection(connectionString);
-
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from tblEmployee", connectionString);
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
