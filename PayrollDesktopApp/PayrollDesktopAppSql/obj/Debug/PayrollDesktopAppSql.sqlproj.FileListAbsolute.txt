@@ -1,0 +1,9 @@
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\bin\Debug\PayrollDesktopAppSql.dacpac
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\bin\Debug\PayrollDesktopAppSql.dll
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\bin\Debug\PayrollDesktopAppSql.pdb
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\Model.xml
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\refactor.xml
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\postdeploy.sql
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\predeploy.sql
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.dll
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.pdb

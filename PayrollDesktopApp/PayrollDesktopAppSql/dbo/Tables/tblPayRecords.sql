@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[tblPayRecords] (
+    [PaymentID]           INT             NOT NULL,
+    [EmployeeID]          INT             NOT NULL,
+    [FullName]            NVARCHAR (50)   NOT NULL,
+    [NINumber]            NVARCHAR (50)   NOT NULL,
+    [PayDate]             DATETIME        NOT NULL,
+    [PayPeriod]           NVARCHAR (50)   NOT NULL,
+    [PayMonth]            NVARCHAR (50)   NOT NULL,
+    [HourlyRate]          DECIMAL (18, 2) NOT NULL,
+    [ContractualHours]    DECIMAL (18, 2) NOT NULL,
+    [OvertimeHours]       DECIMAL (18, 2) NOT NULL,
+    [TotalHours]          DECIMAL (18, 2) NOT NULL,
+    [ContractualEarnings] MONEY           NOT NULL,
+    [OvertimeEarnings]    MONEY           NOT NULL,
+    [TotalEarnings]       MONEY           NOT NULL,
+    [TaxCode]             NVARCHAR (50)   NOT NULL,
+    [TaxAmount]           MONEY           NOT NULL,
+    [NIContribution]      MONEY           NOT NULL,
+    [UnionFee]            MONEY           NOT NULL,
+    [SLC]                 MONEY           NOT NULL,
+    [TotalDeductions]     MONEY           NOT NULL,
+    [NetPay]              MONEY           NOT NULL,
+    CONSTRAINT [PK_tblPayRecords] PRIMARY KEY CLUSTERED ([PaymentID] ASC),
+    CONSTRAINT [FK_tblPayRecords_tblEmployee] FOREIGN KEY ([EmployeeID]) REFERENCES [dbo].[tblEmployee] ([EmployeeID])
+);
+

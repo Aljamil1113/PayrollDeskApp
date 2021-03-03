@@ -33,7 +33,6 @@ D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\net
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csprojAssemblyReference.cache
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.EmployeeForm.resources
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.PreviewEmployeeForm.resources
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csproj.GenerateResource.cache
