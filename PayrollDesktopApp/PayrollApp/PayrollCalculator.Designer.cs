@@ -121,7 +121,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGetEmp = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBoxPayPeriod = new System.Windows.Forms.ListBox();
@@ -320,11 +320,10 @@
             // 
             this.lblEmployeeFullName.AutoSize = true;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(138, 11);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(215, 19);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
-            this.lblEmployeeFullName.Size = new System.Drawing.Size(145, 27);
+            this.lblEmployeeFullName.Size = new System.Drawing.Size(0, 27);
             this.lblEmployeeFullName.TabIndex = 6;
-            this.lblEmployeeFullName.Text = "FULL NAME";
             // 
             // groupBox9
             // 
@@ -1403,7 +1402,7 @@
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.txtFirstName);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnGetEmp);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Location = new System.Drawing.Point(34, 37);
             this.groupBox4.Name = "groupBox4";
@@ -1467,16 +1466,17 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "First Name:";
             // 
-            // button1
+            // btnGetEmp
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(190, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "GET";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGetEmp.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGetEmp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGetEmp.Location = new System.Drawing.Point(190, 32);
+            this.btnGetEmp.Name = "btnGetEmp";
+            this.btnGetEmp.Size = new System.Drawing.Size(43, 29);
+            this.btnGetEmp.TabIndex = 1;
+            this.btnGetEmp.Text = "GET";
+            this.btnGetEmp.UseVisualStyleBackColor = false;
+            this.btnGetEmp.Click += new System.EventHandler(this.button1_Click);
             // 
             // label14
             // 
@@ -1959,7 +1959,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGetEmp;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dtpCurrentDate;
         private System.Windows.Forms.ComboBox cmbCurrentMonth;
