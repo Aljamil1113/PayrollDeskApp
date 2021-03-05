@@ -1838,6 +1838,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "PayrollCalculator";
             this.Text = "Payroll Calculator";
+            this.Load += new System.EventHandler(this.PayrollCalculator_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox9.ResumeLayout(false);

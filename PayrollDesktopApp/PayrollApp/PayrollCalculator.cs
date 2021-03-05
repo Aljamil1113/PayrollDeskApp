@@ -23,6 +23,26 @@ namespace PayrollApp
             Application.Exit();
         }
 
+        private void ListOfMonths()
+        {
+            string[] months = { "Select a month...." ,"January" ,"February" ,"March" ,"April" ,"May" ,"June"
+                              ,"July" ,"August" ,"September" ,"October" ,"November" ,"December" };
+
+            foreach (var month in months)
+            {
+                cmbCurrentMonth.Items.Add(month);
+                cmbCurrentMonth.SelectedIndex = 0;
+            }
+
+            foreach (var month in months)
+            {
+                cmbSearchPayMonth.Items.Add(month);
+                cmbSearchPayMonth.SelectedIndex = 0;
+            }
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
@@ -56,6 +76,11 @@ namespace PayrollApp
             {
                 sqlCon.Close();
             }
+        }
+
+        private void PayrollCalculator_Load(object sender, EventArgs e)
+        {
+            ListOfMonths();
         }
     }
 }
