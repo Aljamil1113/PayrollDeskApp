@@ -273,6 +273,7 @@
             this.btnReset.TabIndex = 16;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSavePay
             // 
@@ -297,6 +298,7 @@
             this.btnComputePay.TabIndex = 14;
             this.btnComputePay.Text = "Compute Pay";
             this.btnComputePay.UseVisualStyleBackColor = false;
+            this.btnComputePay.Click += new System.EventHandler(this.btnComputePay_Click);
             // 
             // txtNetPay
             // 
@@ -653,7 +655,7 @@
             0});
             this.nudHourlyRate.Name = "nudHourlyRate";
             this.nudHourlyRate.Size = new System.Drawing.Size(150, 27);
-            this.nudHourlyRate.TabIndex = 2;
+            this.nudHourlyRate.TabIndex = 28;
             this.nudHourlyRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudHourlyRate.Value = new decimal(new int[] {
             10,
@@ -907,7 +909,7 @@
             0});
             this.nudTues3.Name = "nudTues3";
             this.nudTues3.Size = new System.Drawing.Size(162, 27);
-            this.nudTues3.TabIndex = 7;
+            this.nudTues3.TabIndex = 6;
             this.nudTues3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudWed1
@@ -1040,7 +1042,7 @@
             0});
             this.nudThu3.Name = "nudThu3";
             this.nudThu3.Size = new System.Drawing.Size(162, 27);
-            this.nudThu3.TabIndex = 15;
+            this.nudThu3.TabIndex = 14;
             this.nudThu3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudThu4
@@ -1059,7 +1061,7 @@
             0});
             this.nudThu4.Name = "nudThu4";
             this.nudThu4.Size = new System.Drawing.Size(162, 27);
-            this.nudThu4.TabIndex = 14;
+            this.nudThu4.TabIndex = 15;
             this.nudThu4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudFri1
@@ -1312,7 +1314,7 @@
             0});
             this.nudTues4.Name = "nudTues4";
             this.nudTues4.Size = new System.Drawing.Size(162, 27);
-            this.nudTues4.TabIndex = 6;
+            this.nudTues4.TabIndex = 7;
             this.nudTues4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
@@ -1364,7 +1366,7 @@
             0});
             this.nudSun4.Name = "nudSun4";
             this.nudSun4.Size = new System.Drawing.Size(162, 27);
-            this.nudSun4.TabIndex = 23;
+            this.nudSun4.TabIndex = 27;
             this.nudSun4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudSat4
@@ -1383,7 +1385,7 @@
             0});
             this.nudSat4.Name = "nudSat4";
             this.nudSat4.Size = new System.Drawing.Size(162, 27);
-            this.nudSat4.TabIndex = 27;
+            this.nudSat4.TabIndex = 23;
             this.nudSat4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // numericUpDown25
@@ -1507,7 +1509,9 @@
             this.listBoxPayPeriod.FormattingEnabled = true;
             this.listBoxPayPeriod.ItemHeight = 20;
             this.listBoxPayPeriod.Items.AddRange(new object[] {
-            "Select Pay Period..."});
+            "Select Pay Period...",
+            "1st Payday of the Month",
+            "2nd Payday of the Month"});
             this.listBoxPayPeriod.Location = new System.Drawing.Point(7, 46);
             this.listBoxPayPeriod.Name = "listBoxPayPeriod";
             this.listBoxPayPeriod.Size = new System.Drawing.Size(162, 64);
