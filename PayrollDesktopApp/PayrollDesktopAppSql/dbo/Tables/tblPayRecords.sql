@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[tblPayRecords] (
-    [PaymentID]           INT             NOT NULL,
+    [PaymentID]           INT IDENTITY(1,1) NOT NULL,
     [EmployeeID]          INT             NOT NULL,
     [FullName]            NVARCHAR (50)   NOT NULL,
     [NINumber]            NVARCHAR (50)   NOT NULL,

@@ -59,11 +59,6 @@ namespace PayrollApp
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void ListOfMonths()
         {
             string[] months = { "Select a month...." ,"January" ,"February" ,"March" ,"April" ,"May" ,"June"
@@ -82,6 +77,70 @@ namespace PayrollApp
             }
         }
 
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnSavePay_Click(object sender, EventArgs e)
+        {
+            string cs = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+            SqlConnection objSqlConnection = new SqlConnection(cs);
+            string insertCommand = "INSERT INTO tblPayRecords" +
+                "(EmployeeID, FullName, NINumber, PayDate, PayPeriod, PayMonth, HourlyRate, ContractualHours, " +
+                "OvertimeHours, TotalHours, ContractualEarnings, OvertimeEarnings, TotalEarnings, TaxCode, TaxAmount, NIContribution, " +
+                "UnionFee, SLC, TotalDeductions, NetPay)" +
+                "VALUES(@EmployeeID, @FullName, @NINumber, @PayDate, @PayPeriod, @PayMonth, @HourlyRate, @ContractualHours, " +
+                "@OvertimeHours, @TotalHours, @ContractualEarnings, @OvertimeEarnings, @TotalEarnings, @TaxCode, @TaxAmount, @NIContribution, " +
+                "@UnionFee, @SLC, @TotalDeductions, @NetPay)";
+
+            SqlCommand objInsertCommand = new SqlCommand(insertCommand, objSqlConnection);
+            objInsertCommand.Parameters.AddWithValue("@EmployeeID", txtEmployeeID.Text);
+            objInsertCommand.Parameters.AddWithValue("@FullName", lblEmployeeFullName.Text);
+            objInsertCommand.Parameters.AddWithValue("@NINumber", txtNINumber.Text);
+            objInsertCommand.Parameters.AddWithValue("@PayDate", dtpCurrentDate.Value.ToString("MM/dd/yyyy"));
+            objInsertCommand.Parameters.AddWithValue("@PayPeriod", listBoxPayPeriod.SelectedItem.ToString());
+            objInsertCommand.Parameters.AddWithValue("@PayMonth", cmbCurrentMonth.SelectedItem.ToString());
+            objInsertCommand.Parameters.AddWithValue("@HourlyRate", nudHourlyRate.Value.ToString());
+            objInsertCommand.Parameters.AddWithValue("@ContractualHours", txtContractualHours.Text);
+            objInsertCommand.Parameters.AddWithValue("@OvertimeHours", txtOvertimeHours.Text);
+            objInsertCommand.Parameters.AddWithValue("@TotalHours", txtTotalHoursWorked.Text);
+            objInsertCommand.Parameters.AddWithValue("@ContractualEarnings", txtContractualEarnings.Text);
+            objInsertCommand.Parameters.AddWithValue("@OvertimeEarnings", txtOvertimeEarnings.Text);
+            objInsertCommand.Parameters.AddWithValue("@TotalEarnings", txtTotalEarnings.Text);
+            objInsertCommand.Parameters.AddWithValue("@TaxCode", txtTaxCode.Text);
+            objInsertCommand.Parameters.AddWithValue("@TaxAmount", txtTaxAmount.Text);
+            objInsertCommand.Parameters.AddWithValue("@NIContribution", txtNIContribution.Text);
+            objInsertCommand.Parameters.AddWithValue("@UnionFee", txtunion.Text);
+            objInsertCommand.Parameters.AddWithValue("@SLC", txtSLC.Text);
+            objInsertCommand.Parameters.AddWithValue("@TotalDeductions", txtTotalDeductions.Text);
+            objInsertCommand.Parameters.AddWithValue("@NetPay", txtNetPay.Text);
+
+            try
+            {
+                objSqlConnection.Open();
+                objInsertCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("The following error occured :" + ex.Message + ex.StackTrace, "Query Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                objSqlConnection.Close();
+            }
+            ResetControls();
+            LoadPayRecords();
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetControls();
+        }
+
+       
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
@@ -121,11 +180,8 @@ namespace PayrollApp
         {
             ListOfMonths();
             ResetControls();
-        }
+            LoadPayRecords();
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            ResetControls();
         }
 
         private void btnComputePay_Click(object sender, EventArgs e)
@@ -290,9 +346,13 @@ namespace PayrollApp
 
                 NIContribution = totalAmountEarned * NIRate;
                 SLC = totalAmountEarned * SLCRate;
-
+                
                 //Total Amount Deductable
                 totalDeductions = tax + NIContribution + SLC + Union;
+
+                //Compute Net Pay after deductions
+                netPay = totalAmountEarned - totalDeductions;
+
 
                 //Output to Controls
                 txtContractualHours.Text = totalContractualHours.ToString("F");
@@ -721,9 +781,26 @@ namespace PayrollApp
             txtTotalDeductions.Text = "0.00";
             txtTotalEarnings.Text = "0.00";
             txtTotalHoursWorked.Text = "0.00";
+            txtNetPay.Text = "0.00";
             txtHours.Text = "0.00";
             txtMinutes.Text = "0.00";
             txtDecimal.Text = "0.00";
+
+        }
+        #endregion
+
+
+        #region LOAD PaymentRecords
+        public void LoadPayRecords()
+        {
+            string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from tblPayRecords", connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            dataGridViewPaymentRecords.DataSource = dataSet.Tables[0].DefaultView;
+
+            sqlCon.Close();
         }
         #endregion
 

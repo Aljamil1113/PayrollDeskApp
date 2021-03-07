@@ -286,6 +286,7 @@
             this.btnSavePay.TabIndex = 15;
             this.btnSavePay.Text = "Save Pay";
             this.btnSavePay.UseVisualStyleBackColor = false;
+            this.btnSavePay.Click += new System.EventHandler(this.btnSavePay_Click);
             // 
             // btnComputePay
             // 
@@ -438,9 +439,9 @@
             // 
             this.txtTaxCode.Location = new System.Drawing.Point(233, 20);
             this.txtTaxCode.Name = "txtTaxCode";
-            this.txtTaxCode.ReadOnly = true;
             this.txtTaxCode.Size = new System.Drawing.Size(79, 27);
             this.txtTaxCode.TabIndex = 1;
+            this.txtTaxCode.Text = "BIR2307";
             // 
             // label28
             // 

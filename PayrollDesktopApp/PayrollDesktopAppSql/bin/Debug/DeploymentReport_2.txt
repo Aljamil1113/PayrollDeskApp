@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[tblPayRecords]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[tblPayRecords] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_tblPayRecords_tblEmployee] (Foreign Key)
+     Create
+       [dbo].[FK_tblPayRecords_tblEmployee] (Foreign Key)
