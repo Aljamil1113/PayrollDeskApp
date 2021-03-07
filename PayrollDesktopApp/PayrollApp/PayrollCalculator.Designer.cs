@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintPayslip = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.dataGridViewPaymentRecords = new System.Windows.Forms.DataGridView();
+            this.payrollTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -639,6 +641,7 @@
             this.linkLabelWinCalc.TabIndex = 3;
             this.linkLabelWinCalc.TabStop = true;
             this.linkLabelWinCalc.Text = "Windows Calculator";
+            this.linkLabelWinCalc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWinCalc_LinkClicked);
             // 
             // nudHourlyRate
             // 
@@ -1758,6 +1761,7 @@
             this.btnConvert.TabIndex = 3;
             this.btnConvert.Text = "=";
             this.btnConvert.UseVisualStyleBackColor = false;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // txtDecimal
             // 
@@ -1831,6 +1835,11 @@
             this.dataGridViewPaymentRecords.RowTemplate.Height = 29;
             this.dataGridViewPaymentRecords.Size = new System.Drawing.Size(1346, 110);
             this.dataGridViewPaymentRecords.TabIndex = 1;
+            // 
+            // payrollTimer
+            // 
+            this.payrollTimer.Interval = 1000;
+            this.payrollTimer.Tick += new System.EventHandler(this.payrollTimer_Tick);
             // 
             // PayrollCalculator
             // 
@@ -2032,5 +2041,6 @@
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.Timer payrollTimer;
     }
 }

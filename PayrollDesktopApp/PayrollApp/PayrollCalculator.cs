@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace PayrollApp
 {
@@ -181,6 +182,7 @@ namespace PayrollApp
             ListOfMonths();
             ResetControls();
             LoadPayRecords();
+            payrollTimer.Start();
 
         }
 
@@ -369,6 +371,53 @@ namespace PayrollApp
                 txtTotalDeductions.Text = totalDeductions.ToString("C");
                 txtNetPay.Text = netPay.ToString("C");
             }
+        }
+
+        #region CONVERT TIME TO DECIMAL
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            decimal hours, minutes, decimalHours = 0.00M;
+            if (decimal.TryParse(txtHours.Text, out hours))
+            {
+                if (decimal.TryParse(txtMinutes.Text, out minutes))
+                {
+                    decimalHours = ConvertTimeToDecimal(hours, minutes);
+                    txtDecimal.Text = decimalHours.ToString();
+                }
+
+                else
+                {
+                    MessageBox.Show("Please enter real number for minutes.");
+                    txtMinutes.Focus();
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please enter real number for hours.");
+                txtHours.Focus();
+            }
+        }
+
+        private decimal ConvertTimeToDecimal(decimal hh, decimal mm)
+        {
+            return (hh + (mm / 60));
+        }
+
+        #endregion
+
+        // SHOW CALCULATOR
+        private void linkLabelWinCalc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("calc.exe");
+        }
+
+        //SHOW TIME
+        private void payrollTimer_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            btnTime.Text = dt.ToString("HH:mm:ss");
         }
 
         #region Get and Convert Week 1 values to double data type
@@ -788,7 +837,6 @@ namespace PayrollApp
 
         }
         #endregion
-
 
         #region LOAD PaymentRecords
         public void LoadPayRecords()
