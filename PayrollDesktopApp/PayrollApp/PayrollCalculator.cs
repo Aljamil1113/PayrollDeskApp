@@ -60,6 +60,15 @@ namespace PayrollApp
             InitializeComponent();
         }
 
+        private void PayrollCalculator_Load(object sender, EventArgs e)
+        {
+            ListOfMonths();
+            ResetControls();
+            LoadPayRecords();
+            payrollTimer.Start();
+
+        }
+
         private void ListOfMonths()
         {
             string[] months = { "Select a month...." ,"January" ,"February" ,"March" ,"April" ,"May" ,"June"
@@ -177,15 +186,7 @@ namespace PayrollApp
             }
         }
 
-        private void PayrollCalculator_Load(object sender, EventArgs e)
-        {
-            ListOfMonths();
-            ResetControls();
-            LoadPayRecords();
-            payrollTimer.Start();
-
-        }
-
+        #region PAYROLL COMPUTATION
         private void btnComputePay_Click(object sender, EventArgs e)
         {
             if(ValidateControls())
@@ -372,6 +373,7 @@ namespace PayrollApp
                 txtNetPay.Text = netPay.ToString("C");
             }
         }
+        #endregion
 
         #region CONVERT TIME TO DECIMAL
 
@@ -418,6 +420,12 @@ namespace PayrollApp
         {
             DateTime dt = DateTime.Now;
             btnTime.Text = dt.ToString("HH:mm:ss");
+        }
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
 
         #region Get and Convert Week 1 values to double data type
