@@ -7,4 +7,3 @@ D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\predeploy.sql
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.dll
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.pdb
-D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.sqlprojAssemblyReference.cache

@@ -31,6 +31,7 @@ namespace PayrollApp
 
         double totalContractualHours;
         double totalOvertimeHours;
+
         double totalHoursWorked;
 
         //Declare variables for Amount(Earnings)
@@ -420,12 +421,6 @@ namespace PayrollApp
         {
             DateTime dt = DateTime.Now;
             btnTime.Text = dt.ToString("HH:mm:ss");
-        }
-
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
         }
 
         #region Get and Convert Week 1 values to double data type
@@ -853,10 +848,95 @@ namespace PayrollApp
             SqlConnection sqlCon = new SqlConnection(connectionString);
             SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from tblPayRecords", connectionString);
             DataSet dataSet = new DataSet();
-            dataAdapter.Fill(dataSet);
+            dataAdapter.Fill(dataSet); 
             dataGridViewPaymentRecords.DataSource = dataSet.Tables[0].DefaultView;
 
             sqlCon.Close();
+        }
+        #endregion
+
+        #region SEARCH/FILTERING DATAGRIDVIEW
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StringBuilder searchStatement = new StringBuilder();
+
+                //PAYMENT ID
+                if (txtSearchPaymentID.Text.Length > 0)
+                {
+                    searchStatement.Append(" Convert(PaymentID, 'System.String') like '%" + txtSearchPaymentID.Text + "%'");
+                }
+
+                //EMPLOYEE ID
+                if (txtSearchEmploymentID.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and");
+                    }
+                    searchStatement.Append(" Convert(EmployeeID, 'System.String') like '%" + txtEmployeeID.Text + "%'");
+                }
+
+                //FULLNAME
+                if (txtSearchFullname.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and");
+                    }
+                    searchStatement.Append(" FullName like '%" + txtSearchFullname.Text + "%'");
+                }
+
+                //NI Number
+                if (txtSearchNINumber.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and");
+                    }
+                    searchStatement.Append(" NINumber like '%" + txtSearchNINumber.Text + "%'");
+                }
+
+                //Pay Date
+                if (txtSearchPayDate.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and");
+                    }
+                    searchStatement.Append(" Convert(PayDate, 'System.String') like '%" + txtSearchPayDate.Text + "%'");
+                }
+
+                //Pay Month
+                if (cmbSearchPayMonth.SelectedIndex > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and");
+                    }
+                    searchStatement.Append(" PayMonth like '%" + cmbSearchPayMonth.Text + "%'");
+                }
+
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = dataGridViewPaymentRecords.DataSource;
+                bindingSource.Filter = searchStatement.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("The following error has ocurred: " + ex.Message, "Search error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSearchPaymentID.Text = "";
+            txtSearchEmploymentID.Text = "";
+            txtSearchFullname.Text = "";
+            txtSearchNINumber.Text = "";
+            txtSearchPayDate.Text = "";
+            cmbSearchPayMonth.SelectedIndex = 0;
         }
         #endregion
 
