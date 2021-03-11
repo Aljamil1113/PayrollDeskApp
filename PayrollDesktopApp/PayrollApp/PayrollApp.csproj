@@ -16,11 +16,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EmployeePayroll.xsd</DependentUpon>
     </Compile>
-    <Compile Update="PayrollDb.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PayrollDb.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -28,10 +23,10 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>EmployeePayroll.Designer.cs</LastGenOutput>
     </None>
-    <None Update="PayrollDb.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PayrollDb.Designer.cs</LastGenOutput>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Image\" />
   </ItemGroup>
 
 </Project>

@@ -36,6 +36,7 @@ namespace PayrollApp
 
         //Declare variables for Amount(Earnings)
         double contractualAmountWk1, contractualAmountWk2, contractualAmountWk3, contractualAmountWk4;
+
         double overtimeAmountWk1, overtimeAmountWk2, overtimeAmountWk3, overtimeAmountWk4;
         double totalContractualAmount;
         double totalOvertimeAmount;
@@ -938,6 +939,84 @@ namespace PayrollApp
             txtSearchPayDate.Text = "";
             cmbSearchPayMonth.SelectedIndex = 0;
         }
+        #endregion
+
+        #region PRINT
+        private void btnGeneratePayslip_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //e.Graphics.DrawString("Hello World", new Font("Times New Roman", 20, FontStyle.Bold), Brushes.Red, new Point(0,0));
+            e.Graphics.DrawLine(new Pen(Color.Blue, 2), 60, 90, 750, 90); //x1, y1, x2, y2
+            Image objImage = Image.FromFile(@"D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\Image\google.jpg");
+            e.Graphics.DrawImage(objImage, 10, 100);
+            e.Graphics.DrawString("Google Payroll", new Font("Arial", 24, FontStyle.Bold), Brushes.DarkBlue, new Point(170, 130));
+            e.Graphics.DrawLine(new Pen(Color.Blue, 2), 60, 250, 750, 250);
+            e.Graphics.DrawString("Pay Date: " + dtpCurrentDate.Value.ToString("MM/dd/yyyy"), new Font("Times New Roman", 16, FontStyle.Regular), Brushes.DarkBlue, new Point(500, 180));
+
+            //RECTANGULAR FOR RENTAL DETAILS
+            e.Graphics.DrawRectangle(new Pen(Color.Blue, 2), 60, 252, 700, 50); //x, y, width, height
+            e.Graphics.DrawString("Employee ID: " + txtEmployeeID.Text + "    NAME: " + lblEmployeeFullName.Text+ "      NINO: " + txtNINumber.Text, new Font("Times New Roman", 16, FontStyle.Regular), Brushes.DarkBlue, new Point(60, 280));
+
+            //HEADER FOR PAYMENT DETAILS
+            e.Graphics.DrawLine(new Pen(Color.Blue, 3), 60, 350, 750, 350);
+            e.Graphics.DrawString("EARNINGS", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 320));
+            e.Graphics.DrawString("HOURS", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(180, 320));
+            e.Graphics.DrawString("RATES", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(260, 320));
+            e.Graphics.DrawString("AMOUNTS", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(350, 320));
+            e.Graphics.DrawString("DEDUCTIONS", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 320));
+            e.Graphics.DrawString("AMOUNTS", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(650, 320));
+
+            //BASIC RATE
+            e.Graphics.DrawString("BASIC: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 360));
+            e.Graphics.DrawString(txtContractualHours.Text, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(180, 360));
+            e.Graphics.DrawString(nudHourlyRate.Value.ToString("F"), new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(260, 360));
+            e.Graphics.DrawString(txtContractualEarnings.Text, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(350, 360));
+            e.Graphics.DrawString("TAX: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 360));
+            e.Graphics.DrawString(txtTaxCode.Text, new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(650, 360));
+
+            //OVERTIME
+            e.Graphics.DrawString("OVERTIME: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 400));
+            e.Graphics.DrawString(txtOvertimeHours.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(180, 400));
+            e.Graphics.DrawString(txtOvertimeRate.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(260, 400));
+            e.Graphics.DrawString(txtOvertimeEarnings.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(350, 400));
+            e.Graphics.DrawString("NIC: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 400));
+            e.Graphics.DrawString(txtNIContribution.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 400));
+
+            //UNION DEDUCTION ROW
+            e.Graphics.DrawString("UNION: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 440));
+            e.Graphics.DrawString(txtunion.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 440));
+
+            //SLC DEDUCTION ROW
+            e.Graphics.DrawString("SLC: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 480));
+            e.Graphics.DrawString(txtSLC.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 480));
+
+            //DRAWLINE
+            e.Graphics.DrawLine(new Pen(Color.Blue, 1), 60, 520, 750, 520);
+            //TOTAL EARNINGS ROW
+            e.Graphics.DrawString("TOTAL EARNINGS: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 550));
+            e.Graphics.DrawString(txtTotalEarnings.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(260, 550));
+            e.Graphics.DrawString("TOTAL DEDUCTIONS: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(400, 550));
+            e.Graphics.DrawString(txtTotalDeductions.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 550));
+
+            //DRAWLINE
+            e.Graphics.DrawLine(new Pen(Color.Blue, 1), 60, 580, 750, 580);
+            //DRAW RECTANGLE
+            e.Graphics.DrawRectangle(new Pen(Color.Blue, 2), 60, 610, 700, 50);
+            e.Graphics.DrawString("NET PAY: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 620));
+            e.Graphics.DrawString(txtNetPay.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 620));
+
+        }
+
+        private void btnPrintPayslip_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
         #endregion
 
     }

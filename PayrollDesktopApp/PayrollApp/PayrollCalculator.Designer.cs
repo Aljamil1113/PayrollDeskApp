@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintPayslip = new System.Windows.Forms.Button();
@@ -159,6 +160,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.dataGridViewPaymentRecords = new System.Windows.Forms.DataGridView();
             this.payrollTimer = new System.Windows.Forms.Timer(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -251,6 +254,7 @@
             this.btnPrintPayslip.TabIndex = 18;
             this.btnPrintPayslip.Text = "Print Payslip";
             this.btnPrintPayslip.UseVisualStyleBackColor = false;
+            this.btnPrintPayslip.Click += new System.EventHandler(this.btnPrintPayslip_Click);
             // 
             // btnGeneratePayslip
             // 
@@ -263,6 +267,7 @@
             this.btnGeneratePayslip.TabIndex = 17;
             this.btnGeneratePayslip.Text = "Generate Payslip";
             this.btnGeneratePayslip.UseVisualStyleBackColor = false;
+            this.btnGeneratePayslip.Click += new System.EventHandler(this.btnGeneratePayslip_Click);
             // 
             // btnReset
             // 
@@ -1843,6 +1848,20 @@
             this.payrollTimer.Interval = 1000;
             this.payrollTimer.Tick += new System.EventHandler(this.payrollTimer_Tick);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // PayrollCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -2044,5 +2063,7 @@
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Timer payrollTimer;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
