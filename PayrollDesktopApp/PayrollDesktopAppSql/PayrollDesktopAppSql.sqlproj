@@ -65,6 +65,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\tblEmployee.sql" />
     <Build Include="dbo\Tables\tblPayRecords.sql" />
+    <Build Include="dbo\Tables\tblUsers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\PayrollDesktopAppSql.publish.xml" />

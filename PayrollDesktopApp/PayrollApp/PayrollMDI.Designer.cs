@@ -34,6 +34,7 @@ namespace PayrollApp
             this.manageEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payrollCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.registerUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeeMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@ namespace PayrollApp
             this.arrangeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutPayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,7 @@ namespace PayrollApp
             this.manageEmployeeMenuToolStripMenuItem,
             this.payrollCalculatorMenuToolStripMenuItem,
             this.windowToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.reportingToolStripMenuItem});
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.windowToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
@@ -73,6 +72,7 @@ namespace PayrollApp
             this.manageEmployeeToolStripMenuItem,
             this.payrollCalculatorToolStripMenuItem,
             this.toolStripSeparator1,
+            this.registerUserToolStripMenuItem,
             this.closeAllToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -97,6 +97,13 @@ namespace PayrollApp
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+            // 
+            // registerUserToolStripMenuItem
+            // 
+            this.registerUserToolStripMenuItem.Name = "registerUserToolStripMenuItem";
+            this.registerUserToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.registerUserToolStripMenuItem.Text = "Register User";
+            this.registerUserToolStripMenuItem.Click += new System.EventHandler(this.registerUserToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
@@ -188,12 +195,6 @@ namespace PayrollApp
             this.aboutPayrollToolStripMenuItem.Text = "About Payroll Application";
             this.aboutPayrollToolStripMenuItem.Click += new System.EventHandler(this.aboutPayrollToolStripMenuItem_Click);
             // 
-            // reportingToolStripMenuItem
-            // 
-            this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
-            this.reportingToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.reportingToolStripMenuItem.Text = "&Reporting";
-            // 
             // PayrollMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -241,7 +242,6 @@ namespace PayrollApp
         private System.Windows.Forms.ToolStripMenuItem payrollCalculatorMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
@@ -249,5 +249,6 @@ namespace PayrollApp
         private System.Windows.Forms.ToolStripMenuItem aboutPayrollToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem layoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrangeIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerUserToolStripMenuItem;
     }
 }

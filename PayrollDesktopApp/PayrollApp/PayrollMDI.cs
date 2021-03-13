@@ -13,6 +13,7 @@ namespace PayrollApp
         EmployeeForm objEmployeeForm = null;
         PayrollCalculator objPayrollCalculator = null;
         AboutPayrollSystem objAboutPayrollSystem = null;
+        RegisterUser objRegisterUser = null;
         public PayrollMDI()
         {
             InitializeComponent();
@@ -48,6 +49,21 @@ namespace PayrollApp
             else
             {
                 objPayrollCalculator.Activate();
+            }
+        }
+
+        private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(objRegisterUser == null)
+            {
+                objRegisterUser = new RegisterUser();
+                objRegisterUser.MdiParent = this;
+                objRegisterUser.FormClosed += objRegisterUser_FormClosed;
+                objRegisterUser.Show();
+            }
+            else
+            {
+                objRegisterUser.Activate();
             }
         }
 
@@ -130,7 +146,7 @@ namespace PayrollApp
            
         }
 
-        //SET NULL AGAIN IF THE WINDOW CLOSED
+        #region SET NULL AGAIN IF THE WINDOW CLOSED
         private void objPayrollCalculator_FormClosed(object sender, FormClosedEventArgs e)
         {
             objPayrollCalculator = null;
@@ -146,6 +162,11 @@ namespace PayrollApp
             objAboutPayrollSystem = null;
         }
 
-       
+        private void objRegisterUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            objRegisterUser = null;
+        }
+        #endregion
+
     }
 }
