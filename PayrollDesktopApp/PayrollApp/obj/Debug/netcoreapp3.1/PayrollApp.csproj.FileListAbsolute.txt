@@ -44,4 +44,6 @@ D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\net
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.pdb
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.genruntimeconfig.cache
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.PayrollCalculator.resources
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.AboutPayrollSystem.resources
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.PayrollMDI.resources
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollApp\obj\Debug\netcoreapp3.1\PayrollApp.csprojAssemblyReference.cache
