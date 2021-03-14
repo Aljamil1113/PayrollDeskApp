@@ -19,7 +19,7 @@ namespace PayrollApp
         {
             InitializeComponent();
 
-            LoadData();
+            this.LoadData();
         }
 
         #region ACTION BUTTONS
@@ -68,7 +68,7 @@ namespace PayrollApp
                     SqlCommand objCommand = new SqlCommand(insertCommand, sqlCon);
                     objCommand.ExecuteNonQuery();
 
-                    LoadData();
+                    this.LoadData();
 
                     MessageBox.Show("Employee with ID " + txtEmployeeID.Text + " " + " has been added Successfully!", 
                         "Insertion Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -551,7 +551,7 @@ namespace PayrollApp
         #endregion
 
         #region DATA
-        public void LoadData()
+        private void LoadData()
         {
             string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
             SqlConnection sqlCon = new SqlConnection(connectionString);

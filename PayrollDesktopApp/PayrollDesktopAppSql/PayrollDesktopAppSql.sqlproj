@@ -61,11 +61,16 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="Publish" />
+    <Folder Include="dbo\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\tblEmployee.sql" />
     <Build Include="dbo\Tables\tblPayRecords.sql" />
     <Build Include="dbo\Tables\tblUsers.sql" />
+    <Build Include="dbo\Stored Procedures\spInsertUser.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateUser.sql" />
+    <Build Include="dbo\Stored Procedures\spDeleteUser.sql" />
+    <Build Include="dbo\Stored Procedures\spAllUsers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\PayrollDesktopAppSql.publish.xml" />

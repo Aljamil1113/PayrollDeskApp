@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -10,15 +11,30 @@ namespace PayrollApp
 {
     public partial class RegisterUser : Form
     {
+        private User objUser;
         public RegisterUser()
         {
             InitializeComponent();
+            this.LoadData();
+            this.ClearControls();
         }
 
+        private void LoadData()
+        {
+            string connectionString = @"Data Source=DESKTOP-KGQRUI1;Initial Catalog=PayrollSystemDB;Integrated Security=True";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT UserName, Password, Roles, Description from tblUsers", connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            usersDataGridView.DataSource = dataSet.Tables[0].DefaultView;
+
+            sqlCon.Close();
+        }
         private void ClearControls()
         {
             txtRegisterUsername.Text = "";
             txtRegisterPassword.Text = "";
+            txtRegisterConfirmPassword.Text = "";
             txtRegisterRole.Text = "";
             txtRegisterRoleDescription.Text = "";
         }
@@ -123,17 +139,40 @@ namespace PayrollApp
 
             return true;
         }
+
+        private void UserData()
+        {
+            objUser.UserName = txtRegisterUsername.Text;
+            objUser.Password = txtRegisterPassword.Text;
+            objUser.Role = txtRegisterRole.Text;
+            objUser.Description = txtRegisterRoleDescription.Text;
+        }
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
+            objUser = new User();
+            this.UserData();
             if(isRegisterControlValid())
             {
-                MessageBox.Show("VALID DATA");
+                objUser.AddUser();
             }
+
+
+            this.LoadData();
+            this.ClearControls();
         }
 
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
+            objUser = new User();
+            this.UserData();
+            if (isRegisterControlValid())
+            {
+                objUser.UpdateUser();
+            }
 
+
+            this.LoadData();
+            this.ClearControls();
         }
 
         private void btnResetUser_Click(object sender, EventArgs e)
@@ -143,7 +182,34 @@ namespace PayrollApp
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
+            DialogResult objDialog = MessageBox.Show("Are you sure you want to remove this record?", "Confirm record Deletion",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+            if(objDialog == DialogResult.Yes)
+            {
+                objUser = new User();
+                this.UserData();
+                if (isRegisterControlValid())
+                {
+                    objUser.DeleteUser();
+                }
+
+
+                this.LoadData();
+                this.ClearControls();
+            }
+
+            
+        }
+
+        private void usersDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellCollection cells = usersDataGridView.CurrentRow.Cells;
+            txtRegisterUsername.Text = cells[0].Value.ToString();
+            txtRegisterPassword.Text = cells[1].Value.ToString();
+            txtRegisterConfirmPassword.Text = cells[1].Value.ToString();
+            txtRegisterRole.Text = cells[2].Value.ToString();
+            txtRegisterRoleDescription.Text = cells[3].Value.ToString();
         }
     }
 }

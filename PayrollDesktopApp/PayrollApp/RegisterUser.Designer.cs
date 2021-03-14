@@ -36,19 +36,22 @@ namespace PayrollApp
             this.btnUpdateUser = new System.Windows.Forms.Button();
             this.btnRegisterUser = new System.Windows.Forms.Button();
             this.grpOutputRegisterUser = new System.Windows.Forms.GroupBox();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.grbInputRegisterUser = new System.Windows.Forms.GroupBox();
-            this.txtRegisterUsername = new System.Windows.Forms.TextBox();
-            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
-            this.txtRegisterRole = new System.Windows.Forms.TextBox();
-            this.txtRegisterRoleDescription = new System.Windows.Forms.TextBox();
-            this.lblRegisterUsername = new System.Windows.Forms.Label();
-            this.lblRegisterPassword = new System.Windows.Forms.Label();
-            this.lblRegisterRole = new System.Windows.Forms.Label();
-            this.lblRegisterRoleDescription = new System.Windows.Forms.Label();
             this.lblRegisterConfirmPassword = new System.Windows.Forms.Label();
             this.txtRegisterConfirmPassword = new System.Windows.Forms.TextBox();
+            this.lblRegisterRoleDescription = new System.Windows.Forms.Label();
+            this.lblRegisterRole = new System.Windows.Forms.Label();
+            this.lblRegisterPassword = new System.Windows.Forms.Label();
+            this.lblRegisterUsername = new System.Windows.Forms.Label();
+            this.txtRegisterRoleDescription = new System.Windows.Forms.TextBox();
+            this.txtRegisterRole = new System.Windows.Forms.TextBox();
+            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
+            this.txtRegisterUsername = new System.Windows.Forms.TextBox();
             this.grbRegisterUser.SuspendLayout();
             this.grpRegisterUserButtons.SuspendLayout();
+            this.grpOutputRegisterUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.grbInputRegisterUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +132,24 @@ namespace PayrollApp
             // 
             // grpOutputRegisterUser
             // 
+            this.grpOutputRegisterUser.Controls.Add(this.usersDataGridView);
             this.grpOutputRegisterUser.Location = new System.Drawing.Point(435, 37);
             this.grpOutputRegisterUser.Name = "grpOutputRegisterUser";
             this.grpOutputRegisterUser.Size = new System.Drawing.Size(564, 372);
             this.grpOutputRegisterUser.TabIndex = 1;
             this.grpOutputRegisterUser.TabStop = false;
             this.grpOutputRegisterUser.Text = "Register Users";
+            // 
+            // usersDataGridView
+            // 
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Location = new System.Drawing.Point(6, 27);
+            this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.RowHeadersWidth = 51;
+            this.usersDataGridView.RowTemplate.Height = 29;
+            this.usersDataGridView.Size = new System.Drawing.Size(552, 339);
+            this.usersDataGridView.TabIndex = 0;
+            this.usersDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGridView_CellEnter);
             // 
             // grbInputRegisterUser
             // 
@@ -155,64 +170,22 @@ namespace PayrollApp
             this.grbInputRegisterUser.TabStop = false;
             this.grbInputRegisterUser.Text = "Register User";
             // 
-            // txtRegisterUsername
+            // lblRegisterConfirmPassword
             // 
-            this.txtRegisterUsername.Location = new System.Drawing.Point(175, 57);
-            this.txtRegisterUsername.Name = "txtRegisterUsername";
-            this.txtRegisterUsername.Size = new System.Drawing.Size(211, 27);
-            this.txtRegisterUsername.TabIndex = 0;
+            this.lblRegisterConfirmPassword.AutoSize = true;
+            this.lblRegisterConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegisterConfirmPassword.Location = new System.Drawing.Point(10, 153);
+            this.lblRegisterConfirmPassword.Name = "lblRegisterConfirmPassword";
+            this.lblRegisterConfirmPassword.Size = new System.Drawing.Size(161, 23);
+            this.lblRegisterConfirmPassword.TabIndex = 9;
+            this.lblRegisterConfirmPassword.Text = "Confirm Password:";
             // 
-            // txtRegisterPassword
+            // txtRegisterConfirmPassword
             // 
-            this.txtRegisterPassword.Location = new System.Drawing.Point(175, 116);
-            this.txtRegisterPassword.Name = "txtRegisterPassword";
-            this.txtRegisterPassword.Size = new System.Drawing.Size(211, 27);
-            this.txtRegisterPassword.TabIndex = 1;
-            // 
-            // txtRegisterRole
-            // 
-            this.txtRegisterRole.Location = new System.Drawing.Point(175, 204);
-            this.txtRegisterRole.Name = "txtRegisterRole";
-            this.txtRegisterRole.Size = new System.Drawing.Size(211, 27);
-            this.txtRegisterRole.TabIndex = 2;
-            // 
-            // txtRegisterRoleDescription
-            // 
-            this.txtRegisterRoleDescription.Location = new System.Drawing.Point(175, 260);
-            this.txtRegisterRoleDescription.Multiline = true;
-            this.txtRegisterRoleDescription.Name = "txtRegisterRoleDescription";
-            this.txtRegisterRoleDescription.Size = new System.Drawing.Size(211, 96);
-            this.txtRegisterRoleDescription.TabIndex = 3;
-            // 
-            // lblRegisterUsername
-            // 
-            this.lblRegisterUsername.AutoSize = true;
-            this.lblRegisterUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegisterUsername.Location = new System.Drawing.Point(10, 58);
-            this.lblRegisterUsername.Name = "lblRegisterUsername";
-            this.lblRegisterUsername.Size = new System.Drawing.Size(94, 23);
-            this.lblRegisterUsername.TabIndex = 4;
-            this.lblRegisterUsername.Text = "Username:";
-            // 
-            // lblRegisterPassword
-            // 
-            this.lblRegisterPassword.AutoSize = true;
-            this.lblRegisterPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegisterPassword.Location = new System.Drawing.Point(10, 116);
-            this.lblRegisterPassword.Name = "lblRegisterPassword";
-            this.lblRegisterPassword.Size = new System.Drawing.Size(90, 23);
-            this.lblRegisterPassword.TabIndex = 5;
-            this.lblRegisterPassword.Text = "Password:";
-            // 
-            // lblRegisterRole
-            // 
-            this.lblRegisterRole.AutoSize = true;
-            this.lblRegisterRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegisterRole.Location = new System.Drawing.Point(10, 204);
-            this.lblRegisterRole.Name = "lblRegisterRole";
-            this.lblRegisterRole.Size = new System.Drawing.Size(50, 23);
-            this.lblRegisterRole.TabIndex = 6;
-            this.lblRegisterRole.Text = "Role:";
+            this.txtRegisterConfirmPassword.Location = new System.Drawing.Point(175, 153);
+            this.txtRegisterConfirmPassword.Name = "txtRegisterConfirmPassword";
+            this.txtRegisterConfirmPassword.Size = new System.Drawing.Size(211, 27);
+            this.txtRegisterConfirmPassword.TabIndex = 2;
             // 
             // lblRegisterRoleDescription
             // 
@@ -224,22 +197,64 @@ namespace PayrollApp
             this.lblRegisterRoleDescription.TabIndex = 7;
             this.lblRegisterRoleDescription.Text = "Role Description:";
             // 
-            // lblRegisterConfirmPassword
+            // lblRegisterRole
             // 
-            this.lblRegisterConfirmPassword.AutoSize = true;
-            this.lblRegisterConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRegisterConfirmPassword.Location = new System.Drawing.Point(10, 159);
-            this.lblRegisterConfirmPassword.Name = "lblRegisterConfirmPassword";
-            this.lblRegisterConfirmPassword.Size = new System.Drawing.Size(161, 23);
-            this.lblRegisterConfirmPassword.TabIndex = 9;
-            this.lblRegisterConfirmPassword.Text = "Confirm Password:";
+            this.lblRegisterRole.AutoSize = true;
+            this.lblRegisterRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegisterRole.Location = new System.Drawing.Point(10, 204);
+            this.lblRegisterRole.Name = "lblRegisterRole";
+            this.lblRegisterRole.Size = new System.Drawing.Size(50, 23);
+            this.lblRegisterRole.TabIndex = 6;
+            this.lblRegisterRole.Text = "Role:";
             // 
-            // txtRegisterConfirmPassword
+            // lblRegisterPassword
             // 
-            this.txtRegisterConfirmPassword.Location = new System.Drawing.Point(175, 159);
-            this.txtRegisterConfirmPassword.Name = "txtRegisterConfirmPassword";
-            this.txtRegisterConfirmPassword.Size = new System.Drawing.Size(211, 27);
-            this.txtRegisterConfirmPassword.TabIndex = 8;
+            this.lblRegisterPassword.AutoSize = true;
+            this.lblRegisterPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegisterPassword.Location = new System.Drawing.Point(10, 107);
+            this.lblRegisterPassword.Name = "lblRegisterPassword";
+            this.lblRegisterPassword.Size = new System.Drawing.Size(90, 23);
+            this.lblRegisterPassword.TabIndex = 5;
+            this.lblRegisterPassword.Text = "Password:";
+            // 
+            // lblRegisterUsername
+            // 
+            this.lblRegisterUsername.AutoSize = true;
+            this.lblRegisterUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegisterUsername.Location = new System.Drawing.Point(10, 58);
+            this.lblRegisterUsername.Name = "lblRegisterUsername";
+            this.lblRegisterUsername.Size = new System.Drawing.Size(94, 23);
+            this.lblRegisterUsername.TabIndex = 4;
+            this.lblRegisterUsername.Text = "Username:";
+            // 
+            // txtRegisterRoleDescription
+            // 
+            this.txtRegisterRoleDescription.Location = new System.Drawing.Point(175, 260);
+            this.txtRegisterRoleDescription.Multiline = true;
+            this.txtRegisterRoleDescription.Name = "txtRegisterRoleDescription";
+            this.txtRegisterRoleDescription.Size = new System.Drawing.Size(211, 96);
+            this.txtRegisterRoleDescription.TabIndex = 4;
+            // 
+            // txtRegisterRole
+            // 
+            this.txtRegisterRole.Location = new System.Drawing.Point(175, 204);
+            this.txtRegisterRole.Name = "txtRegisterRole";
+            this.txtRegisterRole.Size = new System.Drawing.Size(211, 27);
+            this.txtRegisterRole.TabIndex = 3;
+            // 
+            // txtRegisterPassword
+            // 
+            this.txtRegisterPassword.Location = new System.Drawing.Point(175, 107);
+            this.txtRegisterPassword.Name = "txtRegisterPassword";
+            this.txtRegisterPassword.Size = new System.Drawing.Size(211, 27);
+            this.txtRegisterPassword.TabIndex = 1;
+            // 
+            // txtRegisterUsername
+            // 
+            this.txtRegisterUsername.Location = new System.Drawing.Point(175, 57);
+            this.txtRegisterUsername.Name = "txtRegisterUsername";
+            this.txtRegisterUsername.Size = new System.Drawing.Size(211, 27);
+            this.txtRegisterUsername.TabIndex = 0;
             // 
             // RegisterUser
             // 
@@ -250,9 +265,12 @@ namespace PayrollApp
             this.Controls.Add(this.grbRegisterUser);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "RegisterUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterUser";
             this.grbRegisterUser.ResumeLayout(false);
             this.grpRegisterUserButtons.ResumeLayout(false);
+            this.grpOutputRegisterUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.grbInputRegisterUser.ResumeLayout(false);
             this.grbInputRegisterUser.PerformLayout();
             this.ResumeLayout(false);
@@ -279,5 +297,6 @@ namespace PayrollApp
         private System.Windows.Forms.TextBox txtRegisterUsername;
         private System.Windows.Forms.Label lblRegisterConfirmPassword;
         private System.Windows.Forms.TextBox txtRegisterConfirmPassword;
+        private System.Windows.Forms.DataGridView usersDataGridView;
     }
 }
