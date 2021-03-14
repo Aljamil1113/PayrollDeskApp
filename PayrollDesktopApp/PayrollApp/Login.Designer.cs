@@ -110,7 +110,6 @@ namespace PayrollApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(417, 548);
-            this.ControlBox = false;
             this.Controls.Add(this.cmbIsRoles);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);

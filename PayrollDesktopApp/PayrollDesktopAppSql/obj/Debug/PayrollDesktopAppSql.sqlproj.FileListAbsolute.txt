@@ -4,3 +4,7 @@ D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\bin
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.dll
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.pdb
 D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\PayrollDesktopAppSql.sqlprojAssemblyReference.cache
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\Model.xml
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\refactor.xml
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\postdeploy.sql
+D:\Self Study\Projects\PayrollDeskApp\PayrollDesktopApp\PayrollDesktopAppSql\obj\Debug\predeploy.sql

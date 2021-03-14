@@ -77,7 +77,7 @@ namespace PayrollApp
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void manageEmployeeMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,5 +168,20 @@ namespace PayrollApp
         }
         #endregion
 
+        private void PayrollMDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult objDialogResult = MessageBox.Show("Are you sure you want to exit this application", "Form Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+            
+            if(objDialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                e.Cancel = false;
+                Login objLogIn = new Login();
+                objLogIn.Visible = true;
+            }
+        }
     }
 }

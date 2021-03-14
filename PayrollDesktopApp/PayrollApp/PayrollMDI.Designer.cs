@@ -206,6 +206,7 @@ namespace PayrollApp
             this.Name = "PayrollMDI";
             this.Text = "PayrollMDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PayrollMDI_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
